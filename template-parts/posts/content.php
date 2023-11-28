@@ -15,6 +15,6 @@
         <?php if (count($cats) > 0): ?>
         <h4 class="font-extrabold text-xs text-gray-500 mb-4 dark:text-slate-400"><?php echo $cats[0]->name; ?></h4>
         <?php endif; ?>
-        <div class="text-sm text-gray-600 dark:text-slate-400"><?php the_excerpt(); ?></div>
+        <div class="text-sm text-gray-600 dark:text-slate-400 line-clamp-3"><?php the_excerpt(); ?></div>
     </a>
 </article>

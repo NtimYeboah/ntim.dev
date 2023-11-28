@@ -6,7 +6,7 @@
                 <div class="w-2/6 md:w-4/6">
                     <p class="text-slate-400 text-sm">&copy; <?php echo date_i18n('Y'); ?> <a href="<?php echo esc_url(home_url()); ?>">ntim.dev</a></p>
                 </div>
-                <div class="w-2/6 md:w-1/3">
+                <div class="w-2/6 md:w-1/6">
                     <ul class="flex justify-between gap-3">
                         <li>
                             <a href="/blog" class="font-sans text-slate-400 font-medium py-4 hover:border-b-4 border-gray-300 dark:text-gray-400">Blog</a>

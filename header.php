@@ -28,7 +28,7 @@
     </head>
     <body <?php body_class('antialiased bg-white dark:bg-cyan-950 scroll-smooth'); ?>>
         <header class="py-2 border-b bg-white dark:bg-gray-950 dark:border-none">
-            <nav class="w-11/12 flex flex-row justify-between items-center mx-auto">
+            <nav class="w-4/6 flex flex-row justify-between items-center mx-auto">
                 <div class="basis-4/5 md:basis-3/5 lg:basis-5/6">
                     <?php
                         $custom_logo_id = get_theme_mod('custom_logo');
