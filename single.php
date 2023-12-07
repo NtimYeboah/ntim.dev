@@ -6,7 +6,7 @@ get_header();
 ?>
 
 <!-- Post header-->
-<section class="md:w-6/12 md:mx-auto">
+<section class="md:w-6/12 md:mx-auto container">
     <div class="flex flex-col items-center">
         <p class="text-gray-500 m-5"><?php echo get_the_date(); ?></p>
         <?php
@@ -45,7 +45,7 @@ get_header();
 <!-- End of Post header-->
 
 <!-- Share plugin -->
-<section class="md:w-6/12 md:mx-auto m-5 border-b-2 border-t-2 border-slate-200 py-9">
+<section class="container md:w-6/12 md:mx-auto m-5 border-b-2 border-t-2 border-slate-200 py-9">
     <div class="flex flex-col items-center space-y-5 text-slate-500">
         <div>
             <h3 class="uppercase text-base font-bold dark:dark:text-gray-200">Share this article</h3>
@@ -85,13 +85,13 @@ get_header();
 <!-- End of share plugin -->
 
 <!-- Comments section -->
-<section class="md:w-6/12 md:mx-auto giscus mt-5 px-4 md:px-0">
+<section class="container md:w-6/12 md:mx-auto giscus mt-5 px-4 md:px-0">
 </section>
 <!-- End of comments section-->
 
 <!-- Newletter section -->
 <section id="action" class="bg-cyan-900 p-5 mt-5">
-    <div class="md:w-9/12 md:mx-auto flex flex-col md:flex md:flex-row md:gap-3">
+    <div class="container md:w-9/12 md:mx-auto flex flex-col md:flex md:flex-row md:gap-3">
         <div class="mb-5 md:basis-1/2">
             <h4 class="font-semibold text-xl text-slate-200">Want to know about future blog posts?</h4>
             <h4 class="font-semibold text-xl text-cyan-500">Then sign up for my newsletter!</h4>
@@ -123,7 +123,7 @@ get_header();
     
     if ($category_posts->have_posts()):
 ?>
-<section class="md:w-6/12 md:mx-auto mt-5">
+<section class="container md:w-6/12 md:mx-auto mt-5">
     <div class="flex flex-col items-center">
         <h1 class="font-extrabold text-2xl mb-5 dark:text-slate-100">You might find this interesting too</h1>
     </div>
