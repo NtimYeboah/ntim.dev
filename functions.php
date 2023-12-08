@@ -76,7 +76,7 @@ if (! function_exists('ntimdev_public_scripts')) {
         $theme = wp_get_theme();
 
         // CSS
-        wp_enqueue_style('style', get_theme_file_uri('/assets/css/style.css'), [], $theme->get('Version'));
+        wp_enqueue_style('style', get_theme_file_uri('style.css'), [], $theme->get('Version'));
 
         // Scripts
         wp_enqueue_script('main', get_theme_file_uri('/assets/js/main.js'), [], $theme->get('Version'), true);
@@ -85,6 +85,9 @@ if (! function_exists('ntimdev_public_scripts')) {
 add_action('wp_enqueue_scripts', 'ntimdev_public_scripts');
 
 if (! function_exists('ntimdev_giscus_script')) {
+    /**
+     * Add Giscus comments
+     */
     function ntimdev_giscus_script() {
         if (is_single()) {
             ?>
@@ -109,3 +112,19 @@ if (! function_exists('ntimdev_giscus_script')) {
     }
 }
 add_action('wp_footer', 'ntimdev_giscus_script');
+
+if (! function_exists('limit_excerpt_length')) {
+    // Limit excerpt length to 30 words
+    function limit_excerpt_length() {
+        return 25;
+    }
+}
+add_filter('excerpt_length', 'limit_excerpt_length');
+
+if (! function_exists('excerpt_more_notation')) {
+    // Notation for read more in excerpt
+    function excerpt_more_notation() {
+        return '...';
+    }
+}
+add_filter('excerpt_more','excerpt_more_notation',11);

@@ -19,7 +19,7 @@
 
                 <p class="text-base text-gray-900 dark:text-gray-400 line-clamp-4 mt-5"><?php the_excerpt(); ?></p>
             </div>
-            <div class="flex flex-row p-5 gap-6 justify-center">
+            <div class="flex flex-row py-4 gap-6 justify-left">
                 <div>
                     <p class="inline-flex gap-1">
                         <svg
@@ -58,7 +58,7 @@
                                 clip-rule="evenodd"
                             />
                         </svg>
-                        <span class="text-sm font-normal text-gray-600"><?php echo get_the_date(); ?></span>  
+                        <span class="text-sm font-normal text-gray-600"><?php echo the_time('m.d.Y'); ?></span>  
                     </p>
                 </div>
             </div>
