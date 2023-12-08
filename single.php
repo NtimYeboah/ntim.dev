@@ -8,7 +8,7 @@ get_header();
 <section class="container sm:pl-4 sm:pr-4 md:mx-auto mt-10">
     <!-- Main content container -->
     <div class="md:w-7/12 md:mx-auto flex flex-col">
-        <div class="flex text-center">
+        <div class="flex justify-center mb-10">
             <?php
                 the_title('<h1 class="font-sarabun text-2xl font-extrabold text-slate-900 dark:text-gray-300">', '</h1>');
             ?>
@@ -19,7 +19,7 @@ get_header();
 
             if (count($cats) > 0):
         ?>
-        <div class="flex justify-center gap-5 mt-8">
+        <div class="flex justify-center gap-5">
             <?php foreach ($cats as $cat):
                 $category_slug .= $cat->slug . ',';
             ?>
