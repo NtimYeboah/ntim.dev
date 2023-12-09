@@ -8,10 +8,10 @@
                         <p class="text-slate-400 text-sm font-sarabun">&copy; <?php echo date_i18n('Y'); ?> <a href="<?php echo esc_url(home_url()); ?>">ntim.dev</a></p>
                     </div>
                     <div class="w-2/6 md:w-1/6">
-                        <ul class="flex justify-between gap-3 md:gap-0">
-                            <li><a href="/blog" class="font-saira font-semibold text-slate-400 py-4 dark:text-gray-400">Blog</a></li>
-                            <li><a href="/projects" class="font-saira font-semibold text-slate-400 py-4 dark:text-gray-400">Projects</a></li>
-                            <li><a href="/about" class="font-saira font-semibold text-slate-400 py-4 dark:text-gray-400">About</a></li>
+                        <ul class="flex justify-between gap-3 md:gap-0 font-saira font-semibold text-slate-400">
+                            <li><a href="/blog" class="py-4 dark:text-gray-400">Blog</a></li>
+                            <li><a href="/projects" class="py-4 dark:text-gray-400">Projects</a></li>
+                            <li><a href="/about" class=" py-4 dark:text-gray-400">About</a></li>
                         </ul>
                     </div>
                     <div class="w-2/6 md:w-1/6">

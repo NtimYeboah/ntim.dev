@@ -26,7 +26,7 @@
             }
         </script>
     </head>
-    <body <?php body_class('antialiased bg-white dark:bg-cyan-950 scroll-smooth'); ?>>
+    <body <?php body_class('antialiased bg-white dark:bg-baccara scroll-smooth'); ?>>
         <header class="py-4">
             <div class="container pl-4 pr-4 sm:pl-4 sm:pr-4 md:mx-auto">
                 <div class="md:w-8/12 md:mx-auto flex flex-row justify-between items-center">
@@ -43,22 +43,22 @@
                                 );
                             } else {
                                 printf(
-                                    '<a href="%1$s" class="font-sarabun text-lg font-extrabold dark:text-gray-400">ntim.dev</a>',
+                                    '<a href="%1$s" class="font-sarabun text-lg font-extrabold dark:text-gray-200">ntim.dev</a>',
                                     esc_url(home_url())
                                 );
                             }
                         ?>
                     </div>
                     <nav class="hidden md:block md:basis-4/12 basis-1/4">
-                        <ul class="flex justify-center gap-12">
+                        <ul class="flex justify-center gap-12 font-saira text-xl font-semibold text-gray-900 dark:text-gray-200">
                             <?php
                                 global $wp;
                                 $current_url = home_url($wp->request);
                                 $path = parse_url($current_url, PHP_URL_PATH);
                             ?>
-                            <li><a href="<?php echo home_url(); ?>" class="font-saira text-xl font-semibold py-1 hover:border-b-2 border-gray-600 dark:text-gray-400 <?php echo $path !== '/projects' || $path !== '/about' ? 'border-b-2 border-gray-600': ''; ?>">Blog</a></li>
-                            <li><a href="/projects" class="font-saira text-xl font-semibold py-1 hover:border-b-2 border-gray-600 dark:text-gray-400 <?php echo $path === '/projects' ? 'border-b-2 border-gray-600': ''; ?>">Projects</a></li>
-                            <li><a href="/about" class="font-saira text-xl font-semibold py-1 hover:border-b-2 border-gray-600 dark:text-gray-400 <?php echo $path === '/about' ? 'border-b-2 border-gray-600': ''; ?>">About</a></li>
+                            <li><a href="<?php echo home_url(); ?>" class="py-1 hover:border-b-2 border-gray-900 <?php echo $path !== '/projects' || $path !== '/about' ? 'border-b-2 border-gray-900': ''; ?>">Blog</a></li>
+                            <li><a href="/projects" class="py-1 hover:border-b-2 hover:border-gray-900 <?php echo $path === '/projects' ? 'border-b-2 border-gray-900': ''; ?>">Projects</a></li>
+                            <li><a href="/about" class="py-1 hover:border-b-2 hover:border-gray-900 <?php echo $path === '/about' ? 'border-b-2 border-gray-900': ''; ?>">About</a></li>
                         </ul>
                     </nav>
                     <div class="basis-1/5 md:basis-4/12 pr-3 md:pr-0 border-r md:border-r-0 dark:border-r-gray-400">
@@ -67,7 +67,7 @@
                                 <button
                                     id="theme-toggle"
                                     type="button"
-                                    class="text-gray-600 dark:text-gray-400 hover:bg-slate-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2"
+                                    class="text-gray-600 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2"
                                 >
                                     <svg
                                         id="theme-toggle-dark-icon"

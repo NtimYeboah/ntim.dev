@@ -15,18 +15,18 @@
         </div>
         <div class="flex flex-col px-4">
             <div class="flex flex-col">
-                <?php the_title('<h3 class="font-sarabun font-extrabold text-lg text-left dark:text-gray-300">', '</h3>'); ?>
+                <?php the_title('<h3 class="font-sarabun font-extrabold text-lg text-left dark:text-gray-400 tracking-wide">', '</h3>'); ?>
 
                 <p class="text-base text-gray-900 dark:text-gray-400 line-clamp-4 mt-5"><?php the_excerpt(); ?></p>
             </div>
             <div class="flex flex-row py-4 gap-6 justify-left">
                 <div>
-                    <p class="inline-flex gap-1">
+                    <p class="inline-flex gap-1 text-gray-900">
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
                             viewBox="0 0 24 24" 
                             fill="currentColor" 
-                            class="w-5 h-5 text-gray-500"
+                            class="w-5 h-5 "
                         >
                             <path
                                 fill-rule="evenodd" 
@@ -39,18 +39,18 @@
                         </svg>
                         <?php $cats = get_the_category(); ?>
                         <?php if (count($cats) > 0): ?>
-                        <span class="text-sm font-normal text-gray-600"><?php echo $cats[0]->name; ?></span>
+                        <span class="text-sm font-normal"><?php echo $cats[0]->name; ?></span>
                         <?php endif; ?> 
                     </p>
                 </div>
 
                 <div>
-                    <p class="inline-flex gap-1">
+                    <p class="inline-flex gap-1 text-gray-900">
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
                             viewBox="0 0 24 24"
                             fill="currentColor"
-                            class="w-5 h-5 text-gray-500"
+                            class="w-5 h-5"
                         >
                             <path
                                 fill-rule="evenodd"
@@ -58,7 +58,7 @@
                                 clip-rule="evenodd"
                             />
                         </svg>
-                        <span class="text-sm font-normal text-gray-600"><?php echo the_time('m.d.Y'); ?></span>  
+                        <span class="text-sm font-normal"><?php echo the_time('m.d.Y'); ?></span>  
                     </p>
                 </div>
             </div>
