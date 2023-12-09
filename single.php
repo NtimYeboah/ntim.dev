@@ -33,9 +33,7 @@ get_header();
         </div>
 
         <div class="flex justify-center">
-            <picture>
-                <img class="rounded-md w-full md:h-96 object-cover object-center mt-10" src="<?php echo esc_url(the_post_thumbnail_url()); ?>" alt="feature-image">
-            </picture>
+            <img class="rounded-md w-full md:h-96 object-cover object-center mt-10" src="<?php echo esc_url(the_post_thumbnail_url()); ?>" alt="feature-image">
         </div>
 
         <div id="content" class="mt-10 text-lg dark:text-gray-300">
@@ -43,7 +41,7 @@ get_header();
         </div>
 
         <!-- Comments section -->
-        <div class="giscus mt-5">
+        <div class="giscus mt-5 mb-10">
         </div>
         <!-- End of comments section-->
     </div>
@@ -63,7 +61,7 @@ get_header();
         if ($category_posts->have_posts()):
     ?>
     <div class="md:w-8/12 md:mx-auto flex flex-col mb-10">
-        <div class="flex flex-col bg-slate-50 dark:bg-daccara mt-10">
+        <div class="flex flex-col bg-slate-50 dark:bg-daccara">
             <!-- Text container -->
             <div class="flex flex-row gap-3">
                 <div>

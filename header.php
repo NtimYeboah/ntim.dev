@@ -51,9 +51,14 @@
                     </div>
                     <nav class="hidden md:block md:basis-4/12 basis-1/4">
                         <ul class="flex justify-center gap-12">
-                            <li><a href="/blog" class="font-saira text-xl font-semibold py-1 hover:border-b-2 border-gray-600 dark:text-gray-400">Blog</a></li>
-                            <li><a href="/projects" class="font-saira text-xl font-semibold py-1 hover:border-b-2 border-gray-600 dark:text-gray-400">Projects</a></li>
-                            <li><a href="/about" class="font-saira text-xl font-semibold py-1 hover:border-b-2 border-gray-600 dark:text-gray-400">About</a></li>
+                            <?php
+                                global $wp;
+                                $current_url = home_url($wp->request);
+                                $path = parse_url($current_url, PHP_URL_PATH);
+                            ?>
+                            <li><a href="<?php echo home_url(); ?>" class="font-saira text-xl font-semibold py-1 hover:border-b-2 border-gray-600 dark:text-gray-400 <?php echo $path !== '/projects' || $path !== '/about' ? 'border-b-2 border-gray-600': ''; ?>">Blog</a></li>
+                            <li><a href="/projects" class="font-saira text-xl font-semibold py-1 hover:border-b-2 border-gray-600 dark:text-gray-400 <?php echo $path === '/projects' ? 'border-b-2 border-gray-600': ''; ?>">Projects</a></li>
+                            <li><a href="/about" class="font-saira text-xl font-semibold py-1 hover:border-b-2 border-gray-600 dark:text-gray-400 <?php echo $path === '/about' ? 'border-b-2 border-gray-600': ''; ?>">About</a></li>
                         </ul>
                     </nav>
                     <div class="basis-1/5 md:basis-4/12 pr-3 md:pr-0 border-r md:border-r-0 dark:border-r-gray-400">
