@@ -1,6 +1,6 @@
 <div class="md:w-9/12 md:mx-auto">
     <div class="container sm:pl-4 sm:pr-4 md:mx-auto mt-5 mb-5">
-        <section id="primary-content" class="flex flex-col gap-5 md:flex-row md:w-10/12 md:mx-auto">
+        <section class="flex flex-col gap-5 md:flex-row md:w-10/12 md:mx-auto">
             <!-- Image container -->
             <div class="basis-3/12">
                 <img class="object-cover object-center shadow-lg w-60 h-80 md:w-96 md:h-96" src="<?php echo esc_url(home_url() . '/wp-content/uploads/2023/12/IMG_55911resized-1.jpg'); ?>" alt="" >
@@ -55,7 +55,7 @@
     </div>
 
     <div class="container sm:pl-4 sm:pr-4 md:mx-auto mt-5 mb-5">
-        <section id="primary-content" class="flex flex-col gap-5 md:flex-row md:w-10/12 md:mx-auto">
+        <section class="flex flex-col gap-5 md:flex-row md:w-10/12 md:mx-auto">
             
             <div class="basis-3/12">
                 <!-- Contact -->
