@@ -57,8 +57,8 @@
                                 $path = parse_url($current_url, PHP_URL_PATH);
                             ?>
                             <li><a href="<?php echo home_url(); ?>" class="py-1 hover:border-b-2 border-gray-900 <?php echo $path !== '/projects' || $path !== '/about' ? 'border-b-2 border-gray-900': ''; ?>">Blog</a></li>
-                            <li><a href="/projects" class="py-1 hover:border-b-2 hover:border-gray-900 <?php echo $path === '/projects' ? 'border-b-2 border-gray-900': ''; ?>">Projects</a></li>
-                            <li><a href="/about" class="py-1 hover:border-b-2 hover:border-gray-900 <?php echo $path === '/about' ? 'border-b-2 border-gray-900': ''; ?>">About</a></li>
+                            <li><a href="/projects" class="py-1 hover:border-b-2 border-gray-900 <?php echo $path === '/projects' ? 'border-b-2 border-gray-900': ''; ?>">Projects</a></li>
+                            <li><a href="/about" class="py-1 hover:border-b-2 border-gray-900 <?php echo $path === '/about' ? 'border-b-2 border-gray-900': ''; ?>">About</a></li>
                         </ul>
                     </nav>
                     <div class="basis-1/5 md:basis-4/12 pr-3 md:pr-0 border-r md:border-r-0 dark:border-r-gray-400">
