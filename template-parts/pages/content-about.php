@@ -72,7 +72,7 @@
                         </div>
                     </div>
                     <div class="flex flex-col mx-4 mb-4">
-                        <div class="flex flex-row text-gray-500 hover:text-gray-800 mb-1 gap-1">
+                        <div class="flex flex-row text-gray-500 hover:text-gray-800 mb-2 gap-1">
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 viewBox="0 0 24 24"
@@ -90,7 +90,7 @@
                             </svg>
                             <span class="text-sm font-normal"><a href="mailto:ntimobedyeboah@gmail.com" target="_blank">ntimobedyeboah@gmail.com</a></span>
                         </div>
-                        <div class="flex flex-row text-gray-500 hover:text-gray-800 mb-1 gap-1">
+                        <div class="flex flex-row text-gray-500 hover:text-gray-800 mb-2 gap-1">
                             <svg
                                     fill="currentColor"
                                     xmlns="http://www.w3.org/2000/svg"
@@ -105,7 +105,7 @@
                             </svg>
                             <span class="text-sm font-normal"><a href="https://www.linkedin.com/in/ntimyeboah/" target="_blank">ntimyeboah</a></span>
                         </div>
-                        <div class="flex flex-row text-gray-500 hover:text-gray-800 mb-1 gap-1">
+                        <div class="flex flex-row text-gray-500 hover:text-gray-800 mb-2 gap-1">
                             <svg
                                 fill="currentColor"
                                 xmlns="http://www.w3.org/2000/svg"
@@ -201,7 +201,7 @@
                 <!-- Work Experience container -->
                 <div class="flex flex-col mx-4 mb-4">
                     <div class="flex flex-col mb-5">
-                        <div class="flex flex-col font-sarabun">
+                        <div class="flex flex-col font-sarabun mb-3">
                             <h4>
                                 <a href="https://64robots.com/" target="_blank" class="font-semibold underline">64 Robots, Baltimore US</a>
                                 <span>-</span>
@@ -253,7 +253,7 @@
                     </div>
 
                     <div class="flex flex-col mb-5">
-                        <div class="flex flex-col font-sarabun">
+                        <div class="flex flex-col font-sarabun mb-3">
                             <h4>
                                 <a href="https://kudobuzz.com/" target="_blank" class="font-semibold underline">Kudobuzz, Accra Ghana</a>
                                 <span>-</span>
@@ -282,7 +282,7 @@
                     </div>
 
                     <div class="flex flex-col mb-5">
-                        <div class="flex flex-col font-sarabun">
+                        <div class="flex flex-col font-sarabun mb-3">
                             <h4>
                                 <a href="https://callenssolutions.com/" target="_blank" class="font-semibold underline">Callens Solutions, Accra Ghana</a>
                                 <span>-</span>
@@ -313,7 +313,7 @@
                     </div>
 
                     <div class="flex flex-col mb-5">
-                        <div class="flex flex-col font-sarabun">
+                        <div class="flex flex-col font-sarabun mb-3">
                             <h4>
                                 <a href="#" target="_blank" class="font-semibold underline">Yame Service, Tema Ghana</a>
                                 <span>-</span>
@@ -336,7 +336,7 @@
                     </div>
 
                     <div class="flex flex-col mb-5">
-                        <div class="flex flex-col font-sarabun">
+                        <div class="flex flex-col font-sarabun mb-3">
                             <h4>
                                 <a href="#" target="_blank" class="font-semibold underline">Coursedub, Accra Ghana</a>
                                 <span>-</span>
