@@ -9,7 +9,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="profile" href="http://gmpg.org/xfn/11">
-	    <link rel="pingback" href="<?php bloginfo( 'pingback_url'); ?>">
+	    <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
         
         <?php wp_head(); ?>
 
@@ -26,7 +26,7 @@
             }
         </script>
     </head>
-    <body <?php body_class('antialiased bg-white dark:bg-baccara scroll-smooth'); ?>>
+    <body <?php body_class('antialiased bg-white dark:bg-gray-900 scroll-smooth'); ?>>
         <header class="py-4">
             <div class="container pl-4 pr-4 sm:pl-4 sm:pr-4 md:mx-auto">
                 <div class="md:w-8/12 md:mx-auto flex flex-row justify-between items-center">
@@ -50,15 +50,15 @@
                         ?>
                     </div>
                     <nav class="hidden md:block md:basis-4/12 basis-1/4">
-                        <ul class="flex justify-center gap-12 font-saira text-xl font-semibold text-gray-900 dark:text-gray-200">
+                        <ul class="flex justify-center gap-12 font-saira text-xl font-semibold">
                             <?php
                                 global $wp;
                                 $current_url = home_url($wp->request);
                                 $path = parse_url($current_url, PHP_URL_PATH);
                             ?>
-                            <li><a href="/" class="py-1 hover:border-b-2 border-gray-900 <?php echo $path === null || str_contains($path, 'blog') ? 'border-b-2 border-gray-900': ''; ?>">Blog</a></li>
-                            <li><a href="/projects" class="py-1 hover:border-b-2 border-gray-900 <?php echo $path === '/projects' ? 'border-b-2 border-gray-900': ''; ?>">Projects</a></li>
-                            <li><a href="/about" class="py-1 hover:border-b-2 border-gray-900 <?php echo $path === '/about' ? 'border-b-2 border-gray-900': ''; ?>">About</a></li>
+                            <li><a href="/" class="py-1 hover:border-b-2 hover:border-gray-900 dark:text-gray-200 dark:hover:border-gray-200 <?php $path === null || str_contains($path, 'articles') ? "border-b-2 border-gray-900": ""; ?>">Articles</a></li>
+                            <li><a href="/projects" class="py-1 hover:border-b-2 border-gray-900 dark:text-gray-200 dark:hover:border-gray-200 <?php $path === '/projects' ? "border-b-2 border-gray-900": ""; ?>">Projects</a></li>
+                            <li><a href="/about" class="py-1 hover:border-b-2 border-gray-900 dark:text-gray-200 dark:hover:border-gray-200 <?php $path === '/about' ? "border-b-2 border-gray-900": ""; ?>">About</a></li>
                         </ul>
                     </nav>
                     <div class="basis-1/5 md:basis-4/12 pr-3 md:pr-0 border-r md:border-r-0 dark:border-r-gray-400">
@@ -99,10 +99,10 @@
                     </div>
                     <div class="basis-1/12 md:hidden lg:hidden">
                         <div class="flex justify-end">
-                            <svg id="sm-menu-icon" onClick="onToggleMenuIcon(this)" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 font-bold dark:text-gray-400">
+                            <svg id="sm-menu-icon" onClick="onToggleMenuIcon(this)" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 font-bold text-gray-600 dark:text-gray-200">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
                             </svg>
-                            <svg id="sm-cancel-icon" onClick="onToggleMenuIcon(this)" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 hidden dark:text-gray-400">
+                            <svg id="sm-cancel-icon" onClick="onToggleMenuIcon(this)" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 hidden text-gray-600 dark:text-gray-200">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
                             </svg>
                         </div>
@@ -111,11 +111,11 @@
             </div>
         </header>
         <!-- Menu for SM and below devices -->
-        <section id="sm-menu" class="hidden w-full shadow-sm z-50 absolute bg-white md:hidden lg:hidden 2xl:hidden dark:bg-cyan-950">
+        <section id="sm-menu" class="hidden w-full shadow-sm z-50 absolute bg-white md:hidden lg:hidden 2xl:hidden dark:bg-gray-900">
             <ul class="flex flex-col items-end">
-                <li class="py-2 border-b dark:border-b-gray-400 w-full"><a href="/" class="font-saira font-bold float-right pr-5 py-2 border-gray-300 dark:text-slate-100">Blog</a></li>
-                <li class="py-2 w-full"><a href="/projects" class="font-saira font-bold float-right pr-5 py-2 border-gray-300 dark:text-slate-100">Projects</a></p></li>
-                <li class="py-2 border-t dark:border-t-gray-400 w-full"><a href="/about.html" class="font-saira font-bold float-right pr-5 py-2 border-gray-300 dark:text-slate-100">About</a></p></li>
+                <li class="py-2 border-b dark:border-b-gray-400 w-full"><a href="/" class="font-saira font-bold float-right pr-5 py-2 border-gray-300 dark:text-gray-200">Blog</a></li>
+                <li class="py-2 w-full"><a href="/projects" class="font-saira font-bold float-right pr-5 py-2 border-gray-300 dark:text-gray-200">Projects</a></p></li>
+                <li class="py-2 border-t dark:border-t-gray-400 w-full"><a href="/about.html" class="font-saira font-bold float-right pr-5 py-2 border-gray-300 dark:text-gray-200">About</a></p></li>
             </ul>
         </section>
         <!-- End of menu for SM and below devices -->
