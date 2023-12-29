@@ -17,7 +17,9 @@
             <div class="flex flex-col">
                 <?php the_title('<h3 class="font-sarabun mt-5 font-extrabold text-lg text-left dark:text-gray-300 tracking-wide">', '</h3>'); ?>
 
-                <p class="text-base text-gray-900 dark:text-gray-300 line-clamp-4 mt-5"><?php the_excerpt(); ?></p>
+                <div class="text-base text-gray-900 dark:text-gray-300 line-clamp-4 mt-5">
+                <?php the_excerpt(); ?>
+                </div>
             </div>
             <div class="flex flex-row py-4 gap-2 justify-left">
                 <div>
@@ -26,10 +28,10 @@
                 <?php $cats = get_the_category(); ?>
                 <?php if (count($cats) > 0): ?>
                     <div>
-                    <span class="font-semibold text-gray-500 dark:text-gray-400">|</span>
+                        <span class="font-semibold text-gray-500 dark:text-gray-400">|</span>
                     </div>
                     <div>
-                    <p class="inline-flex text-gray-600 text-xs font-semibold dark:text-gray-400"><?php echo $cats[0]->name; ?></p>
+                        <p class="inline-flex text-gray-600 text-xs font-semibold dark:text-gray-400"><?php echo $cats[0]->name; ?></p>
                     </div>
                 <?php endif; ?>
             </div>

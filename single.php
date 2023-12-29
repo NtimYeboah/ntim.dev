@@ -5,7 +5,7 @@
 get_header();
 ?>
 <!-- Main content -->
-<section class="container sm:pl-4 sm:pr-4 md:mx-auto mt-10">
+<section class="container px-4 sm:pl-4 sm:pr-4 md:mx-auto mt-10">
     <!-- Main content container -->
     <div class="md:w-7/12 md:mx-auto flex flex-col">
         <div class="flex justify-center mb-10">
@@ -23,13 +23,13 @@ get_header();
             <?php foreach ($cats as $cat):
                 $category_slug .= $cat->slug . ',';
             ?>
-            <span class="text-base font-bold text-gray-600"><?php echo $cat->name; ?></span>
+            <span class="text-base font-bold text-gray-600 dark:text-gray-400"><?php echo $cat->name; ?></span>
             <?php endforeach; ?>
         </div>
         <?php endif; ?>
 
         <div class="flex justify-center gap-5 mt-5">
-            <span class="text-base font-normal text-gray-600"><?php the_time('m.d.Y')?></span>
+        <span class="text-base font-normal text-gray-600 dark:text-gray-400"><?php the_time('m.d.Y')?></span>
         </div>
 
         <div class="flex justify-center">
@@ -41,7 +41,7 @@ get_header();
         </div>
 
         <!-- Comments section -->
-        <div class="giscus mt-5 mb-10">
+        <div class="hidden md:block giscus mt-5 mb-10">
         </div>
         <!-- End of comments section-->
     </div>
@@ -60,8 +60,8 @@ get_header();
         
         if ($category_posts->have_posts()):
     ?>
-    <div class="md:w-8/12 md:mx-auto flex flex-col mb-10">
-        <div class="flex flex-col bg-slate-50 dark:bg-daccara">
+    <div class="md:w-8/12 md:mx-auto flex flex-col mb-10 mt-5">
+        <div class="flex flex-col bg-slate-50 dark:bg-gray-950">
             <!-- Text container -->
             <div class="flex flex-row gap-3">
                 <div>
@@ -70,7 +70,7 @@ get_header();
                 </div>
                 <div>
                     <div class="h-5 mt-2">
-                        <h2 class="font-saira font-bold text-xl dark:text-gray-400">You might be interested in these too</h2>
+                        <h2 class="font-saira font-bold text-xl dark:text-gray-200">You might be interested in these too</h2>
                     </div>
                 </div>
             </div>

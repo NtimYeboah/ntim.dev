@@ -113,7 +113,7 @@
         <!-- Menu for SM and below devices -->
         <section id="sm-menu" class="hidden w-full shadow-sm z-50 absolute bg-white md:hidden lg:hidden 2xl:hidden dark:bg-gray-900">
             <ul class="flex flex-col items-end">
-                <li class="py-2 border-b dark:border-b-gray-400 w-full"><a href="/" class="font-saira font-bold float-right pr-5 py-2 border-gray-300 dark:text-gray-200">Blog</a></li>
+                <li class="py-2 border-b dark:border-b-gray-400 w-full"><a href="/" class="font-saira font-bold float-right pr-5 py-2 border-gray-300 dark:text-gray-200">Articles</a></li>
                 <li class="py-2 w-full"><a href="/projects" class="font-saira font-bold float-right pr-5 py-2 border-gray-300 dark:text-gray-200">Projects</a></p></li>
                 <li class="py-2 border-t dark:border-t-gray-400 w-full"><a href="/about.html" class="font-saira font-bold float-right pr-5 py-2 border-gray-300 dark:text-gray-200">About</a></p></li>
             </ul>

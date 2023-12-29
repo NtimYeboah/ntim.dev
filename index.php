@@ -94,7 +94,7 @@ if ($tips_query->have_posts()):
                         <div class="flex flex-row">
                             <div class="w-12/12">
                                 <?php the_title('<h3 class="hover:underline font-sarabun font-bold mb-2 dark:text-gray-300">', '</h3>'); ?>
-                                <p class="line-clamp-2 dark:text-gray-300"><?php the_excerpt(); ?></p>
+                                <div class="line-clamp-2 dark:text-gray-300"><?php the_excerpt(); ?></div>
                             </div>
                         </div>
                     </a>
