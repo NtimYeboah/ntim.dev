@@ -164,97 +164,28 @@ if ($primary_posts->have_posts()):
 
                 <!-- Article container -->
                 <div class="flex flex-col md:grid md:grid-cols-2 md:gap-4 mx-4 mb-4">
-                    <article class="dark:hover:bg-slate-900 hover:bg-slate-100 mb-4">
-                        <a href="/page-details.html" class="">
-                            <div class="flex-col">
-                                <picture>
-                                    <img class="w-full h-48 object-cover object-center mb-2" src="/assets/img/clock-unsplash.jpg" alt="">
-                                </picture>
-                            </div>
-                            <div class="flex flex-col px-4">
-                                <div class="flex flex-col">
-                                    <h3 class="font-sarabun mt-5 font-extrabold text-lg text-left dark:text-gray-300 tracking-wide">
-                                        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                                    </h3>
+                    <?php
+                        while ($primary_posts->have_posts()):
+                            $primary_posts->the_post();
+                            get_template_part('template-parts/posts/content');
+                        endwhile;
 
-                                    <p class="text-base text-gray-900 dark:text-gray-300 line-clamp-4 mt-5">
-                                        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                                        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                                        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                                    </p>
-                                </div>
-                                <div class="flex flex-row py-4 gap-2 justify-left">
-                                    <div>
-                                        <p class="inline-flex text-gray-600 text-xs font-semibold dark:text-gray-400">1.1.2024</p>
-                                    </div>
-                                    <div>
-                                        <span class="font-semibold text-gray-500 dark:text-gray-400">|</span>
-                                    </div>
-                                    <div>
-                                        <p class="inline-flex text-gray-600 text-xs font-semibold dark:text-gray-400 uppercase">Volutpat</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </article>
-
-                    <article class="dark:hover:bg-slate-900 hover:bg-slate-100 mb-4">
-                        <a href="/page-details.html" class="">
-                            <div class="flex-col">
-                                <picture>
-                                    <img class="w-full h-48 object-cover object-center mb-2" src="/assets/img/clock-unsplash.jpg" alt="">
-                                </picture>
-                            </div>
-                            <div class="flex flex-col px-4">
-                                <div class="flex flex-col">
-                                    <h3 class="font-sarabun mt-5 font-extrabold text-lg text-left dark:text-gray-300 tracking-wide">
-                                        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                                    </h3>
-
-                                    <p class="text-base text-gray-900 dark:text-gray-300 line-clamp-4 mt-5">
-                                        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                                        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                                        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                                    </p>
-                                </div>
-                                <div class="flex flex-row py-4 gap-2 justify-left">
-                                    <div>
-                                        <p class="inline-flex text-gray-600 text-xs font-semibold dark:text-gray-400">1.1.2024</p>
-                                    </div>
-                                    <div>
-                                        <span class="font-semibold text-gray-500 dark:text-gray-400">|</span>
-                                    </div>
-                                    <div>
-                                        <p class="inline-flex text-gray-600 text-xs font-semibold dark:text-gray-400 uppercase">Volutpat</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </article>
+                        wp_reset_postdata();
+                    ?>
                 </div>
                 <!-- End of Articles -->
-
-                <!-- Pagination -->
-                <div class="flex flex-row bg-slate-100 dark:bg-slate-900 justify-between px-4 font-semibold py-2 mb-4 mx-4 dark:text-gray-200">
-                    <div>
-                        <a href="#" class="hover:text-rose-500">Next</a>
-                    </div>
-                    <div class="flex flex-row justify-between gap-10">
-                        <span><a class="text-rose-500" href="#">1</a></span>
-                        <span><a href="#" class="hover:text-rose-500">2</a></span>
-                        <span><a href="#" class="hover:text-rose-500">3</a></span>
-                        <span><a href="#" class="hover:text-rose-500">4</a></span>
-                        <span><a href="#" class="hover:text-rose-500">5</a></span>
-                    </div>
-                    <div>
-                        <a href="#" class="hover:text-rose-500">Prev</a>
-                    </div>
-                </div>
-                <!-- End of pagination -->
 
             </div>
             <!-- End of Articles -->
 
+            <?php
+                $tips_query = new WP_Query([
+                    'tag' => 'tips',
+                    'posts_per_page' => 4
+                ]);
+
+                if ($tips_query->have_posts()):
+            ?>
             <!-- Tips & Snipperts -->
             <div class="flex flex-col bg-slate-50 dark:bg-gray-950">
                 <!-- Text container -->
@@ -273,54 +204,30 @@ if ($primary_posts->have_posts()):
 
                 <!-- Tips container -->
                 <div class="flex flex-col md:grid md:grid-cols-2 pb-5 px-4 gap-3">
+                    <?php
+                        while ($tips_query->have_posts()):
+                            $tips_query->the_post();
+                    ?>
                     <article class="mb-5">
-                        <a href="#">
+                        <a href="<?php echo esc_url(get_permalink()); ?>">
                             <div class="flex flex-row">
                                 <div class="w-12/12">
-                                    <h3 class="hover:underline font-sarabun font-bold mb-2 dark:text-gray-300">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</h3>
-                                    <p class="line-clamp-2 dark:text-gray-300">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+                                <?php the_title('<h3 class="hover:underline font-sarabun font-bold mb-2 dark:text-gray-300">', '</h3>'); ?>
+                                    <p class="line-clamp-2 dark:text-gray-300"><?php the_excerpt(); ?></p>
                                 </div>
                             </div>
                         </a>
                     </article>
+                    <?php
+                        endwhile;
 
-                    <article class="mb-5">
-                        <a href="#">
-                            <div class="flex flex-row">
-                                <div class="w-12/12">
-                                    <h3 class="hover:underline font-sarabun font-bold mb-2 dark:text-gray-300">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</h3>
-                                    <p class="line-clamp-2 dark:text-gray-300">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
-                                </div>
-                            </div>
-                        </a>
-                    </article>
-
-                    <article class="mb-5">
-                        <a href="#">
-                            <div class="flex flex-row">
-                                <div class="w-12/12">
-                                    <h3 class="hover:underline font-sarabun font-bold mb-2 dark:text-gray-300">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</h3>
-                                    <p class="line-clamp-2 dark:text-gray-300">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
-                                </div>
-                            </div>
-                        </a>
-                    </article>
-
-                    <article class="mb-5">
-                        <a href="#">
-                            <div class="flex flex-row">
-                                <div class="w-12/12">
-                                    <h3 class="hover:underline font-sarabun font-bold mb-2 dark:text-gray-300">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</h3>
-                                    <p class="line-clamp-2 dark:text-gray-300">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
-                                </div>
-                            </div>
-                        </a>
-                    </article>
-
+                        wp_reset_postdata();
+                    ?>
                 </div>
                 <!-- End of tips container -->
             </div>
             <!-- End of Tips & Snippets -->
+            <?php endif; ?>
         </div>
 
         <div class="flex flex-col md:w-4/12">
@@ -365,6 +272,10 @@ if ($primary_posts->have_posts()):
                 </div>
             </div>
 
+            <?php
+                $categories = get_categories();
+                if ($categories && count($categories) > 0):
+            ?>
             <div class="flex flex-col w-12/12 bg-slate-50 dark:bg-gray-950 mb-4">
                 <div class="flex flex-row gap-3">
                     <div class="flex flex-col">
@@ -379,22 +290,30 @@ if ($primary_posts->have_posts()):
                 </div>
                 <div class="flex flex-col mx-4 mb-4">
                     <div class="flex flex-col">
-                        <a href="#" class="hover:underline text-sm font-medium uppercase">
-                            <span class="dark:text-gray-300 dark:hover:underline">Volutpat</span>
-                            <span class="text-gray-500 dark:text-gray-400">[1]</span>
-                        </a>
-                        <a href="#" class="hover:underline text-sm font-medium uppercase">
-                            <span class="dark:text-gray-300 dark:hover:underline">Lorem</span>
-                            <span class="text-gray-500 dark:text-gray-400">[1]</span>
-                        </a>
-                        <a href="#" class="hover:underline text-sm font-medium uppercase dark:hover:underline">
-                            <span class="dark:text-gray-300 dark:hover:underline">Excepteur sint</span>
-                            <span class="text-gray-500 dark:text-gray-400">[1]</span>
-                        </a>
+                        <?php foreach ($categories as $category):
+                            printf(
+                                '<a href="%1$s" class="hover:underline text-sm font-medium uppercase">
+                                    <span class="dark:text-gray-300 dark:hover:underline">%2$s</span>
+                                    <span class="text-gray-500 dark:text-gray-400">[%3$s]</span>
+                                </a>',
+                                esc_url(home_url('articles/category/' . $category->slug)),
+                                $category->name,
+                                $category->count
+                            );
+                        endforeach; ?>
                     </div>
                 </div>
             </div>
+            <?php endif; ?>
 
+            <?php
+                $recent_articles = new WP_Query([
+                    'tag' => 'article',
+                    'posts_per_page' => 3
+                ]);
+
+                if ($recent_articles->have_posts()):
+            ?>
             <div class="flex flex-col w-12/12 bg-slate-50 dark:bg-gray-950 mb-4">
                 <div class="flex flex-row gap-3">
                     <div class="flex flex-col">
@@ -408,87 +327,46 @@ if ($primary_posts->have_posts()):
                     </div>
                 </div>
                 <div class="flex flex-col mx-4 mb-4 font-sarabun">
-
+                    <?php while ($recent_articles->have_posts()):
+                        $recent_articles->the_post();
+                    ?>
                     <article class="dark:hover:bg-slate-900 hover:bg-slate-100 mb-2">
-                        <a href="/page-details.html" class="">
+                        <a id="recent-article-<?php the_ID(); ?>" href="<?php echo esc_url(get_permalink()); ?>" class="">
                             <div class="flex flex-col md:flex-row">
                                 <div class="flex flex-col basis-1/3">
+                                    <!-- Fix image height -->
                                     <picture>
                                         <img 
-                                            class="w-full object-cover object-center md:h-auto h-28"
-                                            src="/assets/img/clock-unsplash.jpg"
+                                            class="w-full object-cover object-center md:h-auto h-28" 
+                                            src="<?php echo the_post_thumbnail_url(); ?>"
                                             alt=""
                                         >
                                     </picture>
                                 </div>
                                 <div class="flex flex-col px-4 basis-2/3">
                                     <div class="flex flex-col">
-                                        <h3 class="font-sarabun mt-5 md:mt-0 font-bold text-sm text-left dark:text-gray-300 tracking-wide line-clamp-1">
-                                            Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                                        </h3>
+                                        <?php the_title('<h3 class="font-sarabun mt-5 md:mt-0 font-bold text-sm text-left dark:text-gray-300 tracking-wide line-clamp-1">', '</h3>'); ?>
 
                                         <div>
-                                            <p class="inline-flex text-gray-600 text-xs font-normal dark:text-gray-400">1.1.2024</p>
+                                            <p class="inline-flex text-gray-600 text-xs font-normal dark:text-gray-400"><?php echo the_time('m.d.Y'); ?></p>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </a>
                     </article>
+                    <?php
+                        endwhile;
 
-                    <article class="dark:hover:bg-slate-900 hover:bg-slate-100 mb-2">
-                        <a href="/page-details.html" class="">
-                            <div class="flex flex-col md:flex-row">
-                                <div class="flex flex-col basis-1/3">
-                                    <picture>
-                                        <img
-                                            class="w-full object-cover object-center md:h-auto h-28"
-                                            src="/assets/img/clock-unsplash.jpg"
-                                            alt=""
-                                        >
-                                    </picture>
-                                </div>
-                                <div class="flex flex-col px-4 basis-2/3">
-                                    <div class="flex flex-col">
-                                        <h3 class="font-sarabun mt-5 md:mt-0 font-bold text-sm text-left dark:text-gray-300 tracking-wide line-clamp-1">
-                                            Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                                        </h3>
-                                        <div>
-                                            <p class="inline-flex text-gray-600 text-xs font-normal dark:text-gray-400">1.1.2024</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </article>
-
-                    <article class="dark:hover:bg-slate-900 hover:bg-slate-100 mb-2">
-                        <a href="/page-details.html" class="">
-                            <div class="flex flex-col md:flex-row">
-                                <div class="flex flex-col basis-1/3">
-                                    <picture>
-                                        <img
-                                            class="w-full object-cover object-center md:h-auto h-28"
-                                            src="/assets/img/clock-unsplash.jpg"
-                                            alt=""
-                                        >
-                                    </picture>
-                                </div>
-                                <div class="flex flex-col px-4 basis-2/3">
-                                    <div class="flex flex-col">
-                                        <h3 class="font-sarabun mt-5 md:mt-0 font-bold text-sm text-left dark:text-gray-300 tracking-wide line-clamp-1">
-                                            Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                                        </h3>
-                                        <div>
-                                            <p class="inline-flex text-gray-600 text-xs font-normal dark:text-gray-400">1.1.2024</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </article>
+                        wp_reset_postdata();
+                    ?>
                 </div>
             </div>
+            <?php endif; ?>
+
+            <?php $tags = get_tags();
+                if ($tags && count($tags) > 0):
+            ?>
             <div class="flex flex-col w-12/12 bg-slate-50 dark:bg-gray-950 mb-4">
                 <div class="flex flex-row gap-3">
                     <div class="flex flex-col">
@@ -502,38 +380,19 @@ if ($primary_posts->have_posts()):
                     </div>
                 </div>
                 <div class="flex flex-row mx-4 mb-2 font-sarabun flex-wrap dark:text-gray-300">
-                    <div class="mb-5 mr-2">
-                        <a href="#" class="border px-2 pt-1 pb-2">viverra</a>
-                    </div>
-                    <div class="mb-5 mr-2">
-                        <a href="#" class="border px-2 pt-1 pb-2">ornare</a>
-                    </div>
-                    <div class="mb-5 mr-2">
-                        <a href="#" class="border px-2 pt-1 pb-2">scelerisque eu</a>
-                    </div>
-                    <div class="mb-5 mr-2">
-                        <a href="#" class="border px-2 pt-1 pb-2">consequat</a>
-                    </div>
-                    <div class="mb-5 mr-2">
-                        <a href="#" class="border px-2 pt-1 pb-2">Amet's tempor</a>
-                    </div>
-                    <div class="mb-5 mr-2">
-                        <a href="#" class="border px-2 pt-1 pb-2">volutpat sit scelerisque</a>
-                    </div>
-                    <div class="mb-5 mr-2">
-                        <a href="#" class="border px-2 pt-1 pb-2">ultricies</a>
-                    </div>
-                    <div class="mb-5 mr-2">
-                        <a href="#" class="border px-2 pt-1 pb-2">bibendum's elementum</a>
-                    </div>
-                    <div class="mb-5 mr-2">
-                        <a href="#" class="border px-2 pt-1 pb-2">quam etiam</a>
-                    </div>
-                    <div class="mb-5 mr-2">
-                        <a href="#" class="border px-2 pt-1 pb-2">egestas</a>
-                    </div>
+                    <?php foreach ($tags as $tag):
+                        printf(
+                            '<div class="mb-5 mr-2">
+                                <a href="%1$s" class="border px-2 pt-1 pb-2">%2$s</a>
+                            </div>',
+                            esc_url(home_url('articles/tag/' . $tag->slug)),
+                            $tag->name
+                        );
+                    endforeach;
+                    ?>
                 </div>
             </div>
+            <?php endif; ?>
         </div>
     </div>
 </div>
