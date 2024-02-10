@@ -84,11 +84,11 @@ if (! function_exists('ntimdev_public_scripts')) {
 }
 add_action('wp_enqueue_scripts', 'ntimdev_public_scripts');
 
-if (! function_exists('ntimdev_giscus_script')) {
+//if (! function_exists('ntimdev_giscus_script')) {
     /**
      * Add Giscus comments
      */
-    function ntimdev_giscus_script() {
+    /* function ntimdev_giscus_script() {
         if (is_single()) {
             ?>
                 <script src="https://giscus.app/client.js"
@@ -109,9 +109,9 @@ if (! function_exists('ntimdev_giscus_script')) {
                 </script>
             <?php
         }
-    }
-}
-add_action('wp_footer', 'ntimdev_giscus_script');
+    } */
+//}
+//add_action('wp_footer', 'ntimdev_giscus_script');
 
 if (! function_exists('limit_excerpt_length')) {
     // Limit excerpt length to 30 words
