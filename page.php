@@ -1,6 +1,6 @@
 <?php
 /**
- * Page contents - This is used for projects view
+ * Page contents - This is used all pages
  */
 get_header();
 ?>

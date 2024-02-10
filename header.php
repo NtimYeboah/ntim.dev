@@ -56,7 +56,7 @@
                                 $current_url = home_url($wp->request);
                                 $path = parse_url($current_url, PHP_URL_PATH);
                             ?>
-                            <li><a href="/" class="py-1 border-gray-900 hover:border-b-2 dark:text-gray-200 dark:hover:border-gray-200 <?php echo $path === null || str_contains($path, 'articles') ? "border-b-2 dark:border-gray-200": ""; ?>">Articles</a></li>
+                            <li><a href="/articles" class="py-1 border-gray-900 hover:border-b-2 dark:text-gray-200 dark:hover:border-gray-200 <?php echo $path === '/articles' ? "border-b-2 dark:border-gray-200": ""; ?>">Articles</a></li>
                             <li><a href="/projects" class="py-1 border-gray-900 hover:border-b-2 dark:text-gray-200 dark:hover:border-gray-200 <?php echo $path === '/projects' ? "border-b-2 dark:border-gray-200": ""; ?>">Projects</a></li>
                             <li><a href="/about" class="py-1 border-gray-900 hover:border-b-2 dark:text-gray-200 dark:hover:border-gray-200 <?php echo $path === '/about' ? "border-b-2 dark:border-gray-200": ""; ?>">About</a></li>
                         </ul>
